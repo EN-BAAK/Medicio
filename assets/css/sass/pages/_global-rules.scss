@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Open Sans", sans-serif;
+}
+a {
+    text-decoration: none;
+}
+ul,
+ol {
+    margin: 0;
+    list-style: none;
+}
+input,
+textarea {
+    border: none;
+    outline: none;
+    &::placeholder {
+        @include prefixer(transition, 0.3s);
+    }
+    &:focus::placeholder {
+        @include opacity(0);
+    }
+}
+textarea {
+    resize: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Roboto", sans-serif;
+}

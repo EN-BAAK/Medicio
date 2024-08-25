@@ -1,0 +1,11 @@
+footer {
+    background-color: #eeee;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    p {
+        color: var(--c-grey-text);
+        a {
+            color: var(--c-blue-main);
+        }
+    }
+}

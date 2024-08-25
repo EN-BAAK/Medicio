@@ -1,0 +1,147 @@
+header {
+    height: 72px;
+    box-shadow: 0 3px 12px #e1e1e1;
+    position: fixed;
+    top: 40px;
+    left: 0;
+    z-index: 1000;
+    @include prefixer(
+        transition,
+        var(--time-transition) var(--time-transition)
+    );
+    .container {
+        .logo {
+            img {
+                width: 150px;
+                height: 40px;
+            }
+        }
+        .navbar {
+            ul {
+                display: none;
+                position: absolute;
+                li {
+                    a {
+                        padding-left: 30px;
+                        font-weight: 600;
+                        font-size: 13px;
+                        color: var(--c-grey-text);
+                        @include prefixer(transition, var(--time-transition));
+                        &:hover,
+                        &.active {
+                            color: var(--c-blue-main);
+                        }
+                    }
+                    @include breakpoints(lg) {
+                        &.dropdown:hover .drop-down-one {
+                            top: 25px;
+                            @include opacity(1);
+                            visibility: visible;
+                        }
+                        &.dropdown-two:hover .drop-down-two {
+                            background-color: var(--c-white-main);
+                            left: 218px;
+                            @include opacity(1);
+                            visibility: visible;
+                        }
+                    }
+                }
+                .drop-ul {
+                    @include prefixer(border-radius, 6px);
+                    box-shadow: 0 0 12px #e1e1e1;
+                    position: absolute;
+                    @include opacity(0);
+                    @include prefixer(transition, var(--time-transition));
+                    visibility: hidden;
+                    &.drop-down-one {
+                        left: 20px;
+                        top: 150px;
+                    }
+                    .drop-down-two {
+                        left: 150px;
+                        top: 25px;
+                    }
+                    li {
+                        min-width: 200px;
+                        a {
+                            padding: 10px 10px 0;
+                        }
+                    }
+                }
+                @include breakpoints(lg) {
+                    display: flex;
+                    align-items: center;
+                    position: static;
+                    .drop-ul {
+                        display: block;
+                    }
+                }
+            }
+            #bar {
+                cursor: pointer;
+            }
+            &.mobile {
+                background-color: #00000081;
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0px;
+                left: 0;
+                z-index: 1000;
+                > ul {
+                    background-color: var(--c-white-main);
+                    @include same-scale(calc(100% - 100px));
+                    display: block;
+                    position: absolute;
+                    top: 50px;
+                    left: 50px;
+                    overflow-y: scroll;
+                    li {
+                        a {
+                            display: block;
+                            padding: 10px 20px;
+                            font-size: 15px;
+                            &.clicked + .drop-ul {
+                                display: block;
+                            }
+                        }
+                    }
+                    .drop-ul {
+                        @include same-scale(calc(100% - 100px));
+                        margin-left: 50px;
+                        position: static;
+                        @include opacity(1);
+                        visibility: visible;
+                    }
+                }
+                .fa-x {
+                    position: absolute;
+                    top: 15px;
+                    right: 60px;
+                    color: var(--c-white-main);
+                }
+            }
+        }
+        .appointment-btn {
+            button {
+                background-color: var(--c-blue-main);
+                padding: 8px 25px;
+                border: none;
+                @include prefixer(border-radius, 6px);
+                @include prefixer(transition, var(--time-transition));
+                font-size: 14px;
+                color: var(--c-white-main);
+                &:hover {
+                    background-color: var(--c-blue-second);
+                }
+                @include breakpoints("(max-width: 560px)") {
+                    padding: 8px 15px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    &.scrolled {
+        top: 0;
+    }
+}

@@ -1,0 +1,20 @@
+.main-heading {
+    margin-bottom: 25px;
+    text-align: center;
+    h2 {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        position: relative;
+        font-weight: 600;
+        color: var(--c-grey-text);
+        &:after {
+            content: '';
+            background-color: var(--c-blue-main);
+            width: 75px;
+            height: 4px;
+            position: absolute;
+            bottom: 0;
+            @include center-x;
+        }
+    }
+}

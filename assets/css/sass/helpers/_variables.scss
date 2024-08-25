@@ -1,0 +1,15 @@
+$xs: '(max-width: 575.9px)';
+$sm: '(min-width: 576px)';
+$md: '(min-width: 768px)';
+$lg: '(min-width: 992px)';
+$xl: '(min-width: 1200px)';
+$xxl: '(min-width: 1400px)';
+:root {
+    --time-transition: .3s;
+    --c-white-main: #fff;
+    --c-black-main: #1c1d1d;
+    --c-blue-main: #3fbbc0;
+    --c-blue-second:#65c9cd;
+    --c-grey-text: #626262;
+
+}
